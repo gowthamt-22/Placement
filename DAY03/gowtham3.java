@@ -12,8 +12,11 @@ public class gowtham3 {
 		//div();
 		//breakdowhile();
 		//stress();
-		hari();
-		
+		//hari();
+		//vowel();
+		//longnumber();
+		//password();
+		//palindrome();
 	}
 	static void p1() {
 		int n=sc.nextInt();
@@ -216,11 +219,108 @@ public class gowtham3 {
 		
     	
     }
+	static void vowel() {
+		String player1 =sc.nextLine();
+		String player2=sc.nextLine();
+		if(player1.equals(player2)) {
+			System.out.println("draw");
+			
+		}else if(player1.equals("rock")&&player2.equals("scissor")) {
+			System.out.println("player 1 wins");
+		}else if(player1.equals("scissor")&&player2.equals("paper")) {
+			System.out.println("player 1 wins");
+		}else if(player1.equals("paper")&&player2.equals("rock")) {
+			System.out.println("player 1 wins");
+		}else {
+			System.out.println("player 2 wins");
+		}
+		}
+
+	   static void longnumber() {
+		   long a = sc.nextLong();
+	        long b = sc.nextLong();
+
+	        // Perform multiplication using int (causes overflow for large numbers)
+	        int Result1 = (int) (a * b);  // result will overflow if beyond int range
+
+	        // Perform multiplication using long (correct result)
+	        long Result2 = a * b;
+
+	        // Display both results
+	        System.out.println("Int Result: " + Result1);
+	        System.out.println("Long Result: " + Result2);
+	   }
+		
+       static void password() {
+    	   String password = sc.nextLine();
+
+           // 1️⃣ Check minimum length
+           if (password.length() < 8) {
+               System.out.println("Invalid");
+               return; // Stop the program early
+           }
+
+           // 2️⃣ Initialize flags
+           boolean hasUpper = false;
+           boolean hasLower = false;
+           boolean hasDigit = false;
+
+           // 3️⃣ Loop through each character
+           for (int i = 0; i < password.length(); i++) {
+               char ch = password.charAt(i);
+
+               if (Character.isUpperCase(ch)) {
+                   hasUpper = true;
+               } else if (Character.isLowerCase(ch)) {
+                   hasLower = true;
+               } else if (Character.isDigit(ch)) {
+                   hasDigit = true;
+               }
+
+               // ✅ Early exit optimization
+               if (hasUpper && hasLower && hasDigit) {
+                   break;
+               }
+           }
+
+           // 4️⃣ Final validation
+           if (hasUpper && hasLower && hasDigit) {
+               System.out.println("Valid");
+           } else {
+               System.out.println("Invalid");
+           }
+    	   }
+       static void palindrome() {
+    	   String str = sc.nextLine();
+
+           boolean isPalindrome = true;  // assume true initially
+
+           // Two-pointer approach
+           for (int i = 0, j = str.length() - 1; i < j; i++, j--) {
+               if (str.charAt(i) != str.charAt(j)) {
+                   isPalindrome = false;
+                   break; // stop immediately when mismatch is found
+               }
+           }
+
+           // Output the result
+           if (isPalindrome) {
+               System.out.println("Palindrome");
+           } else {
+               System.out.println("Not a Palindrome");
+           }
+    	   }
+       }
+       
+		
+		
 
 
 
 
-}
+
+
+
 
 
 
