@@ -27,17 +27,21 @@ class Animal{
 	void speak() {
 		
 		System.out.println("animal make a sound");
+	}final void eat(){
+		System.out.println("saapudu");
 	}
 }
 	class dog extends Animal {
 		dog(String name) {
-			super(name);
+			super(name);////parent class la irukkira method aa call panradhukku dhan super use panrom
 			// TODO Auto-generated constructor stub
 		}
 
 		void speak() {
 			super.speak();
 			System.out.println("bow bow");
+		}final void eat(){
+			System.out.println("saapudu");
 		}
 	}
 	class  cat extends Animal {
